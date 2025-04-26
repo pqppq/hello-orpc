@@ -1,7 +1,10 @@
 import { createServer } from "node:http";
 import { RPCHandler } from "@orpc/server/node";
 import { CORSPlugin } from "@orpc/server/plugins";
-import { router } from "./route";
+import { router } from "./router";
+
+export { router } from "./router";
+export * from "./types";
 
 // create RPC handler
 const handler = new RPCHandler(router, {

@@ -3,19 +3,14 @@
 import type { IncomingHttpHeaders } from "node:http";
 import { ORPCError, os } from "@orpc/server";
 import { z } from "zod";
+import { PlannetSchema } from "../schemas";
+import { User } from "../types";
 
-type User = { id: number; name: string };
 
 const parseJWT: (input: any) => User | undefined = (input) => {
 	// TOOD
 	return { id: 1, name: "John" };
 };
-
-const PlannetSchema = z.object({
-	id: z.number().int().min(1),
-	name: z.string(),
-	description: z.string().optional(),
-});
 
 export const listPlanet = os
 	.input(
@@ -29,7 +24,22 @@ export const listPlanet = os
 		return [
 			{
 				id: 1,
-				name: "name",
+				name: "plannet A",
+			},
+			{
+				id: 2,
+				name: "plannet B",
+			},
+			{
+				id: 3,
+				name: "plannet C",
+			},
+			{
+				id: 4,
+				name: "plannet D",
+			},
+			{
+				id: 5, name: "plannet E",
 			},
 		];
 	});

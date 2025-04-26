@@ -1,7 +1,14 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "Preserve",
+		// "moduleResolution": "bundler",
+		"noEmit": true,
+		"lib": ["ESNext", "DOM", "DOM.Iterable", "DOM.AsyncIterable"],
+		"jsx": "preserve",
+		"baseUrl": ".",
+		"paths": {
+			"orpc": ["../orpc/src"]
+		}
+	}
 }
